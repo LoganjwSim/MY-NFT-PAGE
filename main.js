@@ -15,7 +15,7 @@ function getTime() {
     // hours = hours % 12;
   }
 
-  //let hours2 = date.getHours() >= 13 ? date.getHours() % 12 : date.getHours();
+  // let hours2 = date.getHours() >= 13 ? date.getHours() % 12 : date.getHours();
 
   hours = String(hours).padStart(2, "0");
 
@@ -27,3 +27,59 @@ function getTime() {
 
 getTime();
 setInterval(getTime, 1000);
+
+const QUOTES_LIST = "quotesList";
+
+function getQuotes() {
+  const quotes = document.querySelector(".quotes");
+
+  let savedQuotes = localStorage.getItem("QUOTES_LIST");
+
+  if (!savedQuotes) {
+    localStorage.setItem("quotesList", JSON.stringify(["열심히 살자!"]));
+
+    savedQuotes = localStorage.getItem("quotesList");
+  }
+
+  let parsedQuotes = JSON.parse(savedQuotes);
+
+  quotes.innerText =
+    parsedQuotes[Math.floor(Math.random() * parsedQuotes.length)];
+}
+
+getQuotes();
+
+// 없으면 기본적으로 하나 생성
+
+// quotes.innerHTML = "<h1 style='background-color: red;'>화이팅!!!</h1>";
+
+function onClickNewQuotes() {
+  const quotes = document.querySelector(".quotes");
+  const newQuotes = document.querySelector(".new-quotes");
+  const newQuotesInput = document.querySelector(".new-quotes-input");
+
+  if (!newQuotesInput.value) return;
+
+  // 로컬 스토리지에 저장
+  let savedQuotes = localStorage.getItem("quotesList");
+  let parsedQuotes = JSON.parse(savedQuotes);
+
+  parsedQuotes.push(newQuotesInput.value);
+
+  localStorage.setItem("quotesList", JSON.stringify(parsedQuotes));
+
+  // 현재 페이지 반영
+  quotes.innerText = newQuotesInput.value;
+  newQuotesInput.value = "";
+
+  quotes.style.display = "block";
+  newQuotes.style.display = "none";
+}
+
+function onClickQuotes() {
+  const quotes = document.querySelector(".quotes");
+  const newQuotes = document.querySelector(".new-quotes");
+
+  quotes.style.display = "none";
+  newQuotes.style.display = "block";
+}

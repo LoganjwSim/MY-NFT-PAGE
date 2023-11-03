@@ -1,0 +1,23 @@
+{
+  "name": "F. W. Nietzsche",
+  "description": "cute",
+  "image": "",
+  "attributes": [
+    {
+      "trait_type": "cute man",
+      "value": "very cute"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "white"
+    },
+    {
+      "trait_type": "Voice",
+      "value": "low"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "gentle"
+    }
+  ]
+}

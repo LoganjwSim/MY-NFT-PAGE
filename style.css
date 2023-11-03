@@ -1,5 +1,31 @@
+@font-face {
+  font-family: "DS-DIGI";
+  src: url("./assets/fonts/DS-DIGI.TTF");
+}
+
+@font-face {
+  font-family: "DNFBitBitv2";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
+    format("opentype");
+}
+
+.font-digi {
+  font-family: "DS-DIGI";
+}
+
+.font-dnf {
+  font-family: "DNFBitBitv2";
+}
+
 body {
   margin: 0;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
 }
 
 video {
@@ -10,15 +36,6 @@ video {
   left: 0;
   object-fit: cover;
   z-index: -1;
-}
-
-@font-face {
-  font-family: "DS-DIGI";
-  src: url("./assets/fonts/DS-DIGI.TTF");
-}
-
-.font-digi {
-  font-family: "DS-DIGI";
 }
 
 .box {
@@ -41,5 +58,31 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 16px;
+  font-size: 32px;
+}
+
+.new-quotes {
+  display: none;
+}
+
+.new-quotes > button {
+  background-color: white;
+  padding: 8px 16px;
+  margin-left: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.new-quotes-input {
+  border: 10px solid black;
+  padding: 4px 8px;
+  font-size: 20px;
+}
+
+.new-quotes-input:focus {
+  outline: 2px solid pink;
+}
+
+.quotes {
   font-size: 32px;
 }
