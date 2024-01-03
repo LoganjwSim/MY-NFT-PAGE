@@ -90,7 +90,7 @@ async function getNft() {
   const nftDesc = document.querySelector(".nft-desc");
 
   const response = await axios.get(
-    "https://olbm.mypinata.cloud/ipfs/QmU42zYpiQ9x4vd16fEg8ZZAKG2kZvV7aTqYWur8xnHs6Y"
+    "https://tan-rational-goat-745.mypinata.cloud/ipfs/QmPudgtnZbdVApSXEjLTHunfEN6ryK8HfRidaKCoPD4w3K"
   );
 
   nftImg.src = response.data.image;
@@ -99,6 +99,5 @@ async function getNft() {
 }
 
 getNft();
-
 
 // https://olbm.mypinata.cloud/ipfs/QmU42zYpiQ9x4vd16fEg8ZZAKG2kZvV7aTqYWur8xnHs6Y
